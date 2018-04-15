@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Sedes
-                	<a class="btn btn-xs btn-primary" href="{{ route('sedes.create') }}"><i class="glyphicon glyphicon-eye-open"></i> Nuevo</a>
+                	<a class="btn btn-xs btn-primary" href="{{ route('sedes.create') }}"><i class="glyphicon glyphicon-eye-open"></i></a>
                 </div>
                 <div>
                 	<div class="col-md-12">

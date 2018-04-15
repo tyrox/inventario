@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Maneje fácilmente todos los productos de su empresa.
                 </div>
             </div>
         </div>

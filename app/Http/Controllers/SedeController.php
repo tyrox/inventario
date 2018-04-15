@@ -53,7 +53,6 @@ class SedeController extends Controller
             'nombre'=> $name,
             'descripcion' => $descrip
             ]);
-        $sedes = Sede::All();
         return redirect()->route('sedes.index')->with('message', 'Item updated successfully.');
     }
 
