@@ -33,6 +33,7 @@ class ProductoController extends Controller
         //
         $sedes = Sede::orderBy('id', 'desc')->paginate(10);
         return view('producto.create', compact('sedes'));
+        //prueba
     }
 
     /**

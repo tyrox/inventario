@@ -58,8 +58,12 @@
                             <label for="sede" class="col-md-4 control-label">Sede</label>
 
                             <div class="col-md-6">
-                                <input id="sede" type="text" class="form-control" name="sede" value="{{ old('sede') }}" required autofocus>
-
+                                <!-- <input id="sede" type="text" class="form-control" name="sede" value="{{ old('sede') }}" required autofocus> -->
+                                <select class="custom-select custom-select-sm">
+                                    @foreach($sedes as $sede)
+                                    <option value="{{ $sede->id }}">{{ $sede->nombre }}</option>
+                                    @endforeach
+                                </select>
                                 @if ($errors->has('sede'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('sede') }}</strong>
