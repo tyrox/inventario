@@ -31,7 +31,8 @@ class ProductoController extends Controller
     public function create()
     {
         //
-        return view('producto.create');
+        $sedes = Sede::orderBy('id', 'desc')->paginate(10);
+        return view('producto.create', compact('sedes'));
     }
 
     /**
@@ -43,6 +44,19 @@ class ProductoController extends Controller
     public function store(Request $request)
     {
         //
+        $name = $request->input("name");
+        $descrip = $request->input("descrip");
+        $cantidad = $request->input("cantidad");
+        $id_sede = $request->input("sede");
+        $precio = $request->input("precio");
+        Sede::create([
+            'nombre'=> $name,
+            'descripcion' => $descrip,
+            'cantidad' => $cantidad,
+            'id_sede' => $id_sede,
+            'precio' => $precio
+            ]);        
+        return redirect()->route('productos.index')->with('message', 'Item updated successfully.');
 
     }
 
