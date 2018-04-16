@@ -47,10 +47,10 @@ class ProductoController extends Controller
         //
         $name = $request->input("name");
         $descrip = $request->input("descrip");
-        $cantidad = $request->input("cantidad");
+        $cantidad = $request->input("cant");
         $id_sede = $request->input("sede");
         $precio = $request->input("precio");
-        Sede::create([
+        Producto::create([
             'nombre'=> $name,
             'descripcion' => $descrip,
             'cantidad' => $cantidad,

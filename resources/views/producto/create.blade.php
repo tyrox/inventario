@@ -59,9 +59,9 @@
 
                             <div class="col-md-6">
                                 <!-- <input id="sede" type="text" class="form-control" name="sede" value="{{ old('sede') }}" required autofocus> -->
-                                <select class="custom-select custom-select-sm">
+                                <select name="sede" class="custom-select custom-select-sm">
                                     @foreach($sedes as $sede)
-                                    <option value="{{ $sede->id }}">{{ $sede->nombre }}</option>
+                                    <option name="cant"value="{{ $sede->id }}">{{ $sede->nombre }}</option>
                                     @endforeach
                                 </select>
                                 @if ($errors->has('sede'))
