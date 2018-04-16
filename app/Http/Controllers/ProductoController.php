@@ -70,9 +70,9 @@ class ProductoController extends Controller
     public function show($id)
     {
         //
-        $sede = Sede::findOrFail($id);
-
-        return view('sede.show', compact('sede'));
+        $producto = Producto::findOrFail($id);
+        $sedes = Sede::orderBy('id', 'desc')->paginate(10);
+        return view('producto.show', compact('producto', 'sedes'));
     }
 
     /**
@@ -84,9 +84,9 @@ class ProductoController extends Controller
     public function edit($id)
     {
         //
-        $sede = Sede::findOrFail($id);
-
-        return view('sede.edit', compact('sede'));
+        $producto = Producto::findOrFail($id);
+        $sedes = Sede::orderBy('id', 'desc')->paginate(10);
+        return view('producto.edit', compact('producto', 'sedes'));
     }
 
     /**
@@ -99,6 +99,18 @@ class ProductoController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $producto = Producto::findOrFail($id);
+
+        $producto->id = $id;
+        $producto->nombre = $request->input("nombre");
+        $producto->descripcion = $request->input("description");
+        $producto->cantidad = $request->input("cantidad");
+        $producto->id_sede = $request->input("sede");
+        $producto->precio = $request->input("precio");
+
+        $producto->save();
+
+        return redirect()->route('productos.index')->with('message', 'Item updated successfully.');
     }
 
     /**
