@@ -39,41 +39,71 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('cant') ? ' has-error' : '' }}">
-                            <label for="cant" class="col-md-4 control-label">Cantidad</label>
+                        <div class="form-group{{ $errors->has('departamento') ? ' has-error' : '' }}">
+                            <label for="departamento" class="col-md-4 control-label">Departamento</label>
 
                             <div class="col-md-6">
-                                <input id="cant" type="text" class="form-control" name="cant" value="{{ old('cant') }}" required autofocus>
+                                <input id="departamento" type="text" class="form-control" name="departamento" value="{{ old('departamento') }}" required autofocus>
 
-                                @if ($errors->has('cant'))
+                                @if ($errors->has('departamento'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('cant') }}</strong>
+                                        <strong>{{ $errors->first('departamento') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('iv') ? ' has-error' : '' }}">
+                            <label for="iv" class="col-md-4 control-label">IV</label>
+
+                            <div class="col-md-6">
+                                <input id="iv" type="text" class="form-control" name="iv" value="{{ old('iv') }}" required autofocus>
+
+                                @if ($errors->has('iv'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('iv') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
 
-                        <div class="form-group{{ $errors->has('sede') ? ' has-error' : '' }}">
-                            <label for="sede" class="col-md-4 control-label">Sede</label>
+                        <div class="form-group{{ $errors->has('prov1') ? ' has-error' : '' }}">
+                            <label for="prov1" class="col-md-4 control-label">Proveedor</label>
 
-                            <div class="col-md-6">
-                                <!-- <input id="sede" type="text" class="form-control" name="sede" value="{{ old('sede') }}" required autofocus> -->
-                                <select name="sede" class="custom-select custom-select-sm">
-                                    @foreach($sedes as $sede)
-                                    <option name="cant"value="{{ $sede->id }}">{{ $sede->nombre }}</option>
+                            <div class="col-md-6">                                
+                                <select name="prov1" class="custom-select custom-select-sm">
+                                    @foreach($proveedors as $proveedor)
+                                    <option name="prov1"value="{{ $proveedor->id }}">{{ $proveedor->nombre }}</option>
                                     @endforeach
                                 </select>
-                                @if ($errors->has('sede'))
+                                @if ($errors->has('prov1'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('sede') }}</strong>
+                                        <strong>{{ $errors->first('prov1') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('prov2') ? ' has-error' : '' }}">
+                            <label for="prov2" class="col-md-4 control-label">Proveedor</label>
+
+                            <div class="col-md-6">                                
+                                <select name="prov2" class="custom-select custom-select-sm">
+                                    @foreach($proveedors as $proveedor)
+                                    <option name="prov2"value="{{ $proveedor->id }}">{{ $proveedor->nombre }}</option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('prov2'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('prov2') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('precio') ? ' has-error' : '' }}">
-                            <label for="precio" class="col-md-4 control-label">Precio</label>
+                            <label for="precio" class="col-md-4 control-label">Precio costo</label>
 
                             <div class="col-md-6">
                                 <input id="precio" type="text" class="form-control" name="precio" value="{{ old('precio') }}" required autofocus>
@@ -81,6 +111,34 @@
                                 @if ($errors->has('precio'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('precio') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('publico') ? ' has-error' : '' }}">
+                            <label for="publico" class="col-md-4 control-label">Precio público</label>
+
+                            <div class="col-md-6">
+                                <input id="publico" type="text" class="form-control" name="publico" value="{{ old('publico') }}" required autofocus>
+
+                                @if ($errors->has('publico'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('publico') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('existencia') ? ' has-error' : '' }}">
+                            <label for="existencia" class="col-md-4 control-label">Existencia</label>
+
+                            <div class="col-md-6">
+                                <input id="existencia" type="text" class="form-control" name="existencia" value="{{ old('existencia') }}" required autofocus>
+
+                                @if ($errors->has('existencia'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('existencia') }}</strong>
                                     </span>
                                 @endif
                             </div>

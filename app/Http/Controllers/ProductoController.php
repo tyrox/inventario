@@ -31,8 +31,8 @@ class ProductoController extends Controller
     public function create()
     {
         //
-        $proveedor = Proveedor::orderBy('id', 'desc')->paginate(10);
-        return view('producto.create', compact('proveedor'));
+        $proveedors = Proveedor::orderBy('id', 'desc')->paginate(10);
+        return view('producto.create', compact('proveedors'));
         //prueba
     }
 
@@ -47,15 +47,23 @@ class ProductoController extends Controller
         //
         $name = $request->input("name");
         $descrip = $request->input("descrip");
-        $cantidad = $request->input("cant");
-        $id_sede = $request->input("sede");
+        $departamento = $request->input("departamento");
+        $iv = $request->input("iv");
+        $prov1 = $request->input("prov1");
+        $prov2 = $request->input("prov2");
         $precio = $request->input("precio");
+        $publico = $request->input("publico");        
+        $existencia = $request->input("existencia");
         Producto::create([
             'nombre'=> $name,
             'descripcion' => $descrip,
-            'cantidad' => $cantidad,
-            'id_sede' => $id_sede,
-            'precio' => $precio
+            'departamento' => $departamento,
+            'iv' => $iv,
+            'proveedor1' => $prov1,
+            'proveedor2' => $prov2,
+            'precio_costo' => $precio,
+            'precio_publico' => $publico,
+            'existencia' => $existencia
             ]);        
         return redirect()->route('productos.index')->with('message', 'Item updated successfully.');
 
@@ -71,8 +79,8 @@ class ProductoController extends Controller
     {
         //
         $producto = Producto::findOrFail($id);
-        $sedes = Sede::orderBy('id', 'desc')->paginate(10);
-        return view('producto.show', compact('producto', 'sedes'));
+        $proveedor = Proveedor::orderBy('id', 'desc')->paginate(10);
+        return view('producto.show', compact('producto', 'proveedor'));
     }
 
     /**
@@ -85,8 +93,8 @@ class ProductoController extends Controller
     {
         //
         $producto = Producto::findOrFail($id);
-        $sedes = Sede::orderBy('id', 'desc')->paginate(10);
-        return view('producto.edit', compact('producto', 'sedes'));
+        $proveedors = Proveedor::orderBy('id', 'desc')->paginate(10);
+        return view('producto.edit', compact('producto', 'proveedors'));
     }
 
     /**
@@ -101,12 +109,15 @@ class ProductoController extends Controller
         //
         $producto = Producto::findOrFail($id);
 
-        $producto->id = $id;
         $producto->nombre = $request->input("nombre");
         $producto->descripcion = $request->input("description");
-        $producto->cantidad = $request->input("cantidad");
-        $producto->id_sede = $request->input("sede");
-        $producto->precio = $request->input("precio");
+        $producto->departamento = $request->input("departamento");
+        $producto->iv = $request->input("iv");
+        $producto->proveedor1 = $request->input("prov1");
+        $producto->proveedor2 = $request->input("prov2");
+        $producto->precio_costo = $request->input("precio");
+        $producto->precio_publico = $request->input("publico");        
+        $producto->existencia = $request->input("existencia");
 
         $producto->save();
 

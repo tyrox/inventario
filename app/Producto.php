@@ -21,6 +21,7 @@ class Producto extends Model
      * @var array
      */
      protected $fillable = [
-         'nombre', 'descripcion', 'cantidad', 'precio',
+         'nombre', 'descripcion', 'departamento', 'iv', 'proveedor1', 'proveedor2',
+         'precio_costo', 'precio_publico', 'existencia',
      ];
 }

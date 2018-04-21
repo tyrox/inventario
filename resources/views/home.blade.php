@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Lo hacemos fácil</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Maneje fácilmente todos los productos de su empresa.
+                    Maneje eficientemente todos los productos de su empresa.
                 </div>
             </div>
         </div>

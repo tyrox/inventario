@@ -49,7 +49,7 @@
                 		</table>
                 		{!! $proveedors->render() !!}
 			            @else
-			                <h3 class="text-center alert alert-info">Empty!</h3>
+			                <h3 class="text-center alert alert-info">No hay proveedores registrados!</h3>
 			            @endif
         			</div>
                 </div>             
