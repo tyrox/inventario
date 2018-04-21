@@ -3,12 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\User;
-use App\Venta;
-use App\Producto;
 
-class VentaController extends Controller
+class Factura_compra extends Controller
 {
     /**
      * Display a listing of the resource.

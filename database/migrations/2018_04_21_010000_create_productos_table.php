@@ -17,12 +17,18 @@ class CreateProductosTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('descripcion');
-            $table->integer('cantidad');
-            $table->unsignedInteger('id_sede');
-            $table->double('precio');
+            $table->string('departamento');
+            $table->boolean('iv');
+            $table->unsignedInteger('proveedor1');
+            $table->unsignedInteger('proveedor2');
+            $table->decimal('precio_costo', 10, 2);
+            $table->decimal('precio_publico', 10, 2);
+            $table->integer('existencia');
+            
             $table->timestamps();
 
-            $table->foreign('id_sede')->references('id')->on('sedes');
+            $table->foreign('proveedor1')->references('id')->on('proveedors');
+            $table->foreign('proveedor2')->references('id')->on('proveedors');
         });
     }
 

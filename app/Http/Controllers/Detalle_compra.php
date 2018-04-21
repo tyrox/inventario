@@ -3,12 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\User;
-use App\Inventario;
-use App\Producto;
 
-class InventarioController extends Controller
+class Detalle_compra extends Controller
 {
     /**
      * Display a listing of the resource.
