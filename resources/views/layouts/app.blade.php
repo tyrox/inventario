@@ -51,6 +51,7 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li><a href="{{ route('clientes.index') }}">Clientes</a></li>
+                            <li><a href="{{ route('proveedors.index') }}">Proveedores</a></li>
                             <li><a href="{{ route('productos.index') }}">Productos </a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

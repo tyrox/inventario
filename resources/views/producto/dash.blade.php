@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12 col-md-offset-0">
             <div class="panel panel-default">
                 <div class="panel-heading">Tus productos
                 	<a class="btn btn-xs btn-primary" href="{{ route('productos.create') }}"><i class="glyphicon glyphicon-plus-sign"></i></a>
@@ -17,9 +17,13 @@
 		                            <th>ID</th>
 		                            <th>Nombre</th>
 		                        	<th>Descripción</th>
-		                        	<th>Cantidad</th>
-		                        	<th>$ Precio</th>
-		                        	<th># sede</th>
+		                        	<th>Departamento</th>
+		                        	<th>IV</th>
+		                        	<th>Proveedor</th>
+		                        	<th>Proveedor</th>
+		                        	<th>Costo</th>
+		                        	<th>Público</th>
+		                        	<th>Existencias</th>
 		                            <th class="text-right">OPTIONS</th>
 		                        </tr>
 		                    </thead>
@@ -29,9 +33,13 @@
 		                                <td>{{$producto->id}}</td>
 		                                <td>{{$producto->nombre}}</td>
 		                    			<td>{{$producto->descripcion}}</td>
-		                    			<td>{{$producto->cantidad}}</td>
-		                    			<td>{{$producto->precio}}</td>
-		                    			<td>{{$producto->id_sede}}</td>
+		                    			<td>{{$producto->departamento}}</td>
+		                    			<td>{{$producto->iv}}</td>
+		                    			<td>{{$producto->proveedor1}}</td>
+		                    			<td>{{$producto->proveedor2}}</td>
+		                    			<td>{{$producto->precio_costo}}</td>
+		                    			<td>{{$producto->precio_publico}}</td>
+		                    			<td>{{$producto->existencia}}</td>
 		                                <td class="text-right">
 		                                    <a class="btn btn-xs btn-primary" href="{{ route('productos.show', $producto->id) }}"><i class="glyphicon glyphicon-zoom-in"></i> </a>
 		                                    <a class="btn btn-xs btn-warning" href="{{ route('productos.edit', $producto->id) }}"><i class="glyphicon glyphicon-edit"></i></a>

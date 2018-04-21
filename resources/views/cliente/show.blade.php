@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group">
                      <label for="descripcion">CÉDULA</label>
-                     <p class="form-control-static">{{$cliente->ceula}}</p>
+                     <p class="form-control-static">{{$cliente->cedula}}</p>
                 </div>
                 <div class="form-group">
                      <label for="descripcion">DIRECCIÓN</label>

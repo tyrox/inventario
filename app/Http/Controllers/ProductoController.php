@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Producto;
+use App\Proveedor;
 
 class ProductoController extends Controller
 {
@@ -30,8 +31,8 @@ class ProductoController extends Controller
     public function create()
     {
         //
-        $sedes = Sede::orderBy('id', 'desc')->paginate(10);
-        return view('producto.create', compact('sedes'));
+        $proveedor = Proveedor::orderBy('id', 'desc')->paginate(10);
+        return view('producto.create', compact('proveedor'));
         //prueba
     }
 
