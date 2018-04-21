@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Proveedor extends Controller
+class ProveedorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +14,10 @@ class Proveedor extends Controller
     public function index()
     {
         //
+        //
+        $proveedors = Proveedor::orderBy('id', 'desc')->paginate(15);
+        
+        return view('proveedor.dash', compact('proveedors'));
     }
 
     /**

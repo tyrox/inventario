@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Detalle_compra extends Controller
+class Factura_compraController extends Controller
 {
     /**
      * Display a listing of the resource.

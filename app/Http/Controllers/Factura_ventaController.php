@@ -3,14 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
-use App\Http\Controllers\Controller;
-use App\User;
-use App\Sede;
-use App\Producto;
 
-class SedeController extends Controller
+class Factura_ventaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,9 +14,6 @@ class SedeController extends Controller
     public function index()
     {
         //
-        $sedes = Sede::orderBy('id', 'desc')->paginate(10);
-        
-        return view('sede.dash', compact('sedes'));
     }
 
     /**
@@ -33,9 +24,6 @@ class SedeController extends Controller
     public function create()
     {
         //
-
-        return view('sede.create');
-
     }
 
     /**
@@ -47,13 +35,6 @@ class SedeController extends Controller
     public function store(Request $request)
     {
         //
-        $name = $request->input("name");
-        $descrip = $request->input("descrip");
-        Sede::create([
-            'nombre'=> $name,
-            'descripcion' => $descrip
-            ]);
-        return redirect()->route('sedes.index')->with('message', 'Item updated successfully.');
     }
 
     /**
@@ -65,9 +46,6 @@ class SedeController extends Controller
     public function show($id)
     {
         //
-        $sede = Sede::findOrFail($id);
-
-        return view('sede.show', compact('sede'));
     }
 
     /**
@@ -79,9 +57,6 @@ class SedeController extends Controller
     public function edit($id)
     {
         //
-        $sede = Sede::findOrFail($id);
-
-        return view('sede.edit', compact('sede'));
     }
 
     /**
@@ -94,15 +69,6 @@ class SedeController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $sede = Sede::findOrFail($id);
-
-        $sede->id = $id;
-        $sede->nombre = $request->input("name");
-        $sede->descripcion = $request->input("description");
-
-        $sede->save();
-
-        return redirect()->route('sedes.index')->with('message', 'Item updated successfully.');
     }
 
     /**
@@ -114,9 +80,5 @@ class SedeController extends Controller
     public function destroy($id)
     {
         //
-        $sede = Sede::findOrFail($id);
-        $sede->delete();
-
-        return redirect()->route('sedes.index')->with('message', 'Item deleted successfully.');
     }
 }

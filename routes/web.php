@@ -18,8 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('sedes', 'SedeController');
+Route::resource('clientes', 'ClienteController');
 Route::resource('productos', 'ProductoController');
-Route::resource('inventarios', 'InventarioController');
-Route::resource('compras', 'CompraController');
-Route::resource('ventas', 'VentaController');
+Route::resource('proveedors', 'ProveedorController');
+Route::resource('deventas', 'Detalle_ventaController');
+Route::resource('decompras', 'Detalle_compraController');
+Route::resource('facompras', 'Factura_compraController');
+Route::resource('faventas', 'Factura_ventaController');

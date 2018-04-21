@@ -11,4 +11,8 @@ class Cliente extends Model
 	*Asociación con la tabla
     */
     protected $table = 'clientes';
+
+    protected $fillable = ['nombre', 'cedula', 'direccion', 'telefono1',
+    						'telefono2', 'facturacion',
+    ];
 }

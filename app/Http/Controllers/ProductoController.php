@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
-use App\Sede;
 use App\Producto;
 
 class ProductoController extends Controller
@@ -122,5 +121,9 @@ class ProductoController extends Controller
     public function destroy($id)
     {
         //
+        $producto = Producto::findOrFail($id);
+        $producto->delete();
+
+        return redirect()->route('productos.index')->with('message', 'Item deleted successfully.');
     }
 }
