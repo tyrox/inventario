@@ -15,4 +15,9 @@ class Proveedor extends Model
     protected $fillable = ['nombre', 'telefono1', 'telefono2', 'correo',
     						'direccion', 'contacto',
     ];
+
+    public function factura_compras() 
+    {
+    	return $this->hasMany('App\Factura_compra');
+    }
 }

@@ -15,4 +15,9 @@ class Cliente extends Model
     protected $fillable = ['nombre', 'cedula', 'direccion', 'telefono1',
     						'telefono2', 'facturacion',
     ];
+
+    public function factura_ventas() 
+    {
+        return $this->hasMany('App\Factura_venta');
+    }
 }

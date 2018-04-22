@@ -24,4 +24,13 @@ class Producto extends Model
          'nombre', 'descripcion', 'departamento', 'iv', 'proveedor1', 'proveedor2',
          'precio_costo', 'precio_publico', 'existencia',
      ];
+     
+     public function detalle_compras() 
+    {
+        return $this->hasMany('App\Detalle_compra');
+    }
+    public function detalle_ventas() 
+    {
+        return $this->hasMany('App\Detalle_venta');
+    }
 }

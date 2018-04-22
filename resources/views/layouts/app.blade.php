@@ -50,6 +50,8 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+                            <li><a href="{{ route('facompras.index') }}">Compras</a></li>
+                            <li><a href="{{ route('clientes.index') }}">Ventas</a></li>
                             <li><a href="{{ route('clientes.index') }}">Clientes</a></li>
                             <li><a href="{{ route('proveedors.index') }}">Proveedores</a></li>
                             <li><a href="{{ route('productos.index') }}">Productos </a></li>

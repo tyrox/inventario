@@ -86,8 +86,8 @@
 
                             <div class="col-md-6">                                
                                 <select name="fac" class="custom-select custom-select-sm">                                    
-                                    <option name="fac"value="credito">Contado</option>
-                                    <option name="fac"value="contado">Crédito</option>
+                                    <option name="fac"value="credito">Crédito</option>
+                                    <option name="fac"value="contado">Contado</option>
                                 </select>
                                 @if ($errors->has('fac'))
                                     <span class="help-block">
