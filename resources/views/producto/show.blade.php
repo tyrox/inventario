@@ -19,10 +19,7 @@
         <div class="col-md-12">
 
             <form action="#">
-                <div class="form-group">
-                    <label for="nome">ID</label>
-                    <p class="form-control-static">{{$producto->id}}</p>
-                </div>
+                
                 <div class="form-group">
                      <label for="code">NOMBRE</label>
                      <p class="form-control-static">{{$producto->nombre}}</p>

@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Factura_compra;
+use App\Proveedor;
+use App\Producto;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class Factura_compraController extends Controller
 {
@@ -14,6 +19,9 @@ class Factura_compraController extends Controller
     public function index()
     {
         //
+        $factura_compras = Factura_compra::orderBy('id', 'desc')->paginate(15);
+        
+        return view('compra.dash', compact('factura_compras'));
     }
 
     /**
@@ -24,6 +32,8 @@ class Factura_compraController extends Controller
     public function create()
     {
         //
+        $proveedors = Proveedor::orderBy('id', 'desc')->paginate(10);
+        return view('compra.create', compact('proveedors'));
     }
 
     /**
@@ -34,7 +44,17 @@ class Factura_compraController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //        
+        $prov1 = $request->input("prov1");
+        $fac = $request->input("fac");
+        
+        Factura_compra::create([
+            'proveedor_id'=> $prov1,
+            'facturacion' => $fac,
+            'user_id' => Auth::user()->id
+            ]);        
+        return redirect()->route('facompras.index')->with('message', 'Item updated successfully.');
+
     }
 
     /**
@@ -57,6 +77,9 @@ class Factura_compraController extends Controller
     public function edit($id)
     {
         //
+        $factura_compra = Factura_compra::findOrFail($id);
+        $productos = Producto::orderBy('id', 'desc')->paginate(10);       
+        return view('compra.edit', compact('factura_compra', 'productos'));
     }
 
     /**

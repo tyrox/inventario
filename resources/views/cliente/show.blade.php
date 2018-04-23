@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('header')
 <div class="page-header">
-        <h2>Cliente #{{$cliente->id}}</h2>
+        <h3>Cliente #{{$cliente->id}}</h3>
         <form action="{{ route('clientes.destroy', $cliente->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
             <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -19,10 +19,7 @@
         <div class="col-md-12">
 
             <form action="#">
-                <div class="form-group">
-                    <label for="nome">ID</label>
-                    <p class="form-control-static">{{$cliente->id}}</p>
-                </div>
+                
                 <div class="form-group">
                      <label for="code">NOMBRE</label>
                      <p class="form-control-static">{{$cliente->nombre}}</p>
