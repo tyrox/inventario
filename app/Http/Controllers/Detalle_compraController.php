@@ -73,7 +73,7 @@ class Detalle_compraController extends Controller
         $producto->existencia = $producto->existencia + $cantidad;
 
         $factura_compra_up->save();
-        $producto->save();        
+        $producto->save();
 
         
         
@@ -124,7 +124,7 @@ class Detalle_compraController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //        
         $detalle_compra = Detalle_compra::findOrFail($id);
         $producto = Producto::findOrFail($detalle_compra->producto_id);
         $factura_compra_up = Factura_compra::findOrFail($detalle_compra->factura_compra_id);
