@@ -66,6 +66,10 @@ class Factura_compraController extends Controller
     public function show($id)
     {
         //
+        $detalle_compras = Factura_compra::findOrFail($id)->detalle_compras;
+        $productos = Producto::orderBy('id', 'desc')->paginate(10);
+        $factura_compra = Factura_compra::findOrFail($id);
+        return view('compra.show', compact('detalle_compras', 'productos', 'factura_compra'));
     }
 
     /**
@@ -78,8 +82,8 @@ class Factura_compraController extends Controller
     {
         //
         $factura_compra = Factura_compra::findOrFail($id);
-        $productos = Producto::orderBy('id', 'desc')->paginate(10);       
-        return view('compra.edit', compact('factura_compra', 'productos'));
+            
+        return view('compra.edit', compact('factura_compra'));
     }
 
     /**
@@ -103,5 +107,10 @@ class Factura_compraController extends Controller
     public function destroy($id)
     {
         //
+        $factura_compra = Factura_compra::findOrFail($id);
+        
+        $factura_compra->delete();
+
+        return redirect()->route('facompras.index')->with('message', 'Item deleted successfully.');
     }
 }

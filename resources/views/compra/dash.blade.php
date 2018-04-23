@@ -21,7 +21,7 @@
 		                        	<th>Impuesto</th>
 		                        	<th>Total</th>
 		                        	<th>Facturacion</th>
-		                        	<th>Usuario</th>
+		                        	<th><i class="glyphicon glyphicon-user"></i>Usuario</th>
 		                            <th class="text-right">OPTIONS</th>
 		                        </tr>
 		                    </thead>
@@ -36,9 +36,8 @@
 		                    			<td>{{$factura_compra->monto_total}}</td>
 		                    			<td>{{$factura_compra->facturacion}}</td>
 		                    			<td>{{$factura_compra->user->name}}</td>
-		                                <td class="text-right">
-		                                    <a class="btn btn-xs btn-primary" href="{{ route('facompras.show', $factura_compra->id) }}"><i class="glyphicon glyphicon-zoom-in"></i> </a>
-		                                    <a class="btn btn-xs btn-warning" href="{{ route('facompras.edit', $factura_compra->id) }}"><i class="glyphicon glyphicon-edit"></i></a>
+		                                <td class="text-right">		                                    
+		                                    <a class="btn btn-xs btn-warning" href="{{ route('facompras.edit', $factura_compra->id) }}"><i class="glyphicon glyphicon-cog"></i></a>
 		                                    <form action="{{ route('facompras.destroy', $factura_compra->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
 		                                        <input type="hidden" name="_method" value="DELETE">
 		                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">

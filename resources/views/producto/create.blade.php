@@ -57,7 +57,7 @@
                             <label for="iv" class="col-md-4 control-label">IV</label>
 
                             <div class="col-md-6">
-                                <input id="iv" type="text" class="form-control" name="iv" value="{{ old('iv') }}" required autofocus>
+                                <input id="iv" type="number" class="form-control" name="iv" value="{{ old('iv') }}" required autofocus>
 
                                 @if ($errors->has('iv'))
                                     <span class="help-block">
@@ -106,7 +106,7 @@
                             <label for="precio" class="col-md-4 control-label">Precio costo</label>
 
                             <div class="col-md-6">
-                                <input id="precio" type="text" class="form-control" name="precio" value="{{ old('precio') }}" required autofocus>
+                                <input id="precio" type="number" step="any" class="form-control" name="precio" value="{{ old('precio') }}" required autofocus>
 
                                 @if ($errors->has('precio'))
                                     <span class="help-block">
@@ -120,7 +120,7 @@
                             <label for="publico" class="col-md-4 control-label">Precio público</label>
 
                             <div class="col-md-6">
-                                <input id="publico" type="text" class="form-control" name="publico" value="{{ old('publico') }}" required autofocus>
+                                <input id="publico" type="number" step="any" class="form-control" name="publico" value="{{ old('publico') }}" required autofocus>
 
                                 @if ($errors->has('publico'))
                                     <span class="help-block">
@@ -129,20 +129,7 @@
                                 @endif
                             </div>
                         </div>
-
-                        <div class="form-group{{ $errors->has('existencia') ? ' has-error' : '' }}">
-                            <label for="existencia" class="col-md-4 control-label">Existencia</label>
-
-                            <div class="col-md-6">
-                                <input id="existencia" type="text" class="form-control" name="existencia" value="{{ old('existencia') }}" required autofocus>
-
-                                @if ($errors->has('existencia'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('existencia') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">

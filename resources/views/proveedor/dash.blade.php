@@ -16,8 +16,8 @@
 		                        <tr>
 		                            <th>ID</th>
 		                            <th>Nombre</th>
-		                        	<th>Teléfono</th>
-		                        	<th>Teléfono</th>
+		                        	<th><i class="glyphicon glyphicon-phone-alt"></i></th>
+		                        	<th><i class="glyphicon glyphicon-phone-alt"></i></th>
 		                        	<th>Correo</th>
 		                        	<th>Dirección</th>
 		                        	<th>Contacto</th>

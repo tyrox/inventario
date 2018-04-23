@@ -52,8 +52,7 @@ class ProductoController extends Controller
         $prov1 = $request->input("prov1");
         $prov2 = $request->input("prov2");
         $precio = $request->input("precio");
-        $publico = $request->input("publico");        
-        $existencia = $request->input("existencia");
+        $publico = $request->input("publico");
         Producto::create([
             'nombre'=> $name,
             'descripcion' => $descrip,
@@ -62,8 +61,7 @@ class ProductoController extends Controller
             'proveedor1' => $prov1,
             'proveedor2' => $prov2,
             'precio_costo' => $precio,
-            'precio_publico' => $publico,
-            'existencia' => $existencia
+            'precio_publico' => $publico
             ]);        
         return redirect()->route('productos.index')->with('message', 'Item updated successfully.');
 

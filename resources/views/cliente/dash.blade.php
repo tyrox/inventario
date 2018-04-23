@@ -18,8 +18,8 @@
 		                            <th>Nombre</th>
 		                        	<th>Cédula</th>
 		                        	<th>Dirección</th>
-		                        	<th>Teléfono</th>
-		                        	<th>Teléfono</th>
+		                        	<th><i class="glyphicon glyphicon-phone-alt"></i></th>
+		                        	<th><i class="glyphicon glyphicon-phone-alt"></i></th>
 		                        	<th>Facturación</th>
 		                            <th class="text-right">OPTIONS</th>
 		                        </tr>
