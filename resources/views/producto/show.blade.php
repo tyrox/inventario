@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('header')
-<div class="page-header">
+<div class="page-header panel-primary">
         <h2>Producto #{{$producto->id}}</h2>
         <form action="{{ route('productos.destroy', $producto->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
             <input type="hidden" name="_method" value="DELETE">

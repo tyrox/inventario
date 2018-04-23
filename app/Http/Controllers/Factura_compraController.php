@@ -96,6 +96,20 @@ class Factura_compraController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $factura_compra = Factura_compra::findOrFail($id);
+        
+        $descuento = $request->input("descuento");
+
+        $total_descuento = ($factura_compra->monto_factura * $descuento)/100;
+        $factura_compra->monto_descuento = $total_descuento;
+        $factura_compra->monto_total = $factura_compra->monto_factura - $total_descuento +
+            $factura_compra->monto_impuesto;
+
+
+        $factura_compra->save();
+
+        $factura_compras = Factura_compra::orderBy('id', 'desc')->paginate(15);
+        return view('compra.dash', compact('factura_compras'));
     }
 
     /**

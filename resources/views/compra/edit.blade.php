@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('header')
-<div class="page-header">
+<div class="page-header panel-primary">
         <h3>Factura #{{$factura_compra->id}}</h3>
         <a class="btn  btn-primary" href="{{ route('facompras.show', $factura_compra->id) }}">
         Productos <i class="glyphicon glyphicon-shopping-cart"></i></a>
@@ -13,7 +13,8 @@
         <div class="col-md-12">
 
             <form action="{{ route('facompras.update', $factura_compra->id) }}" method="POST">
-                
+                <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
                      <label for="code">Proveedor: {{$factura_compra->proveedor->nombre}}</label>
                 </div>
@@ -35,8 +36,18 @@
                 <div class="form-group">
                      <label for="descripcion">Usuario: {{$factura_compra->user->name}}</label>
                 </div>
-                
-                <button type="submit" class="btn btn-primary">Facturar <i class="glyphicon glyphicon-check"></i></button>
+                @if ($factura_compra->monto_total > 0)
+                    <div class="panel-footer">
+                         <label for="descripcion">Factura cerrada.</label>
+                    </div>
+                @else
+                    <div class="form-group">
+                         <label for="descripcion">Descuento:</label>
+                         <input id="descuento" type="number" step="any" class="form-control" name="descuento" value="{{ old('descuento') }}" required autofocus>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Facturar <i class="glyphicon glyphicon-check"></i></button>
+                @endif
             </form>
 
 

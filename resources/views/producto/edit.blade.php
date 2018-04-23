@@ -39,7 +39,7 @@
 
                   <div class="form-group @if($errors->has('iv')) has-error @endif">
                     <label for="iv-field">IV</label>
-                    <input type="text" id="iv-field" name="iv" class="form-control" value="{{ $producto->iv }}"/>
+                    <input type="number" step="any" id="iv-field" name="iv" class="form-control" value="{{ $producto->iv }}"/>
                      @if($errors->has("iv"))
                       <span class="help-block">{{ $errors->first("iv") }}</span>
                      @endif
@@ -82,7 +82,7 @@
 
                   <div class="form-group @if($errors->has('precio')) has-error @endif">
                     <label for="precio-field">Precio costo</label>
-                    <input type="text" id="precio-field" name="precio" class="form-control" value="{{ $producto->precio_costo }}"/>
+                    <input type="number" step="any" id="precio-field" name="precio" class="form-control" value="{{ $producto->precio_costo }}"/>
                        @if($errors->has("precio"))
                         <span class="help-block">{{ $errors->first("precio") }}</span>
                        @endif
@@ -90,7 +90,7 @@
 
                   <div class="form-group @if($errors->has('publico')) has-error @endif">
                     <label for="publico-field">Precio público</label>
-                    <input type="text" id="publico-field" name="publico" class="form-control" value="{{ $producto->precio_publico }}"/>
+                    <input type="number" step="any" id="publico-field" name="publico" class="form-control" value="{{ $producto->precio_publico }}"/>
                        @if($errors->has("publico"))
                         <span class="help-block">{{ $errors->first("publico") }}</span>
                        @endif
@@ -98,7 +98,7 @@
 
                   <div class="form-group @if($errors->has('existencia')) has-error @endif">
                     <label for="existencia-field">Existencias</label>
-                    <input type="text" id="existencia-field" name="existencia" class="form-control" value="{{ $producto->existencia }}"/>
+                    <input type="number" id="existencia-field" name="existencia" class="form-control" value="{{ $producto->existencia }}"/>
                        @if($errors->has("existencia"))
                         <span class="help-block">{{ $errors->first("existencia") }}</span>
                        @endif

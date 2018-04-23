@@ -57,7 +57,7 @@
                             <label for="iv" class="col-md-4 control-label">IV</label>
 
                             <div class="col-md-6">
-                                <input id="iv" type="number" class="form-control" name="iv" value="{{ old('iv') }}" required autofocus>
+                                <input id="iv" type="number" step="any" class="form-control" name="iv" value="{{ old('iv') }}" required autofocus>
 
                                 @if ($errors->has('iv'))
                                     <span class="help-block">

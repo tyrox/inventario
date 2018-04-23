@@ -2,12 +2,12 @@
 
 @section('content')
     @include('error')
-  <div class="container">
-    
-        <h3><i class="glyphicon glyphicon-edit"></i> Proveedor #{{$proveedor->id}}</h3>
-    
-    <div class="col-md-8 col-md-offset-2">
-      <div class="row">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+        <i class="glyphicon glyphicon-edit"></i> Proveedor #{{$proveedor->id}}
+    </div>
+    <div class="panel-body">
+      <div class="col-md-8 col-md-offset-2">
           <div class="col-md-12">
               <form action="{{ route('proveedors.update', $proveedor->id) }}" method="POST">
                   <input type="hidden" name="_method" value="PUT">
