@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <link href="{{ asset('fonts/glyphicons-halflings-regular.eot') }}" rel="stylesheet">
         <!-- Styles -->
         <style>
             html, body {
@@ -69,7 +69,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">Inicio</a>
+                        <a href="{{ url('/home') }}"><i class="glyphicon glyphicon-home"></i>Inicio</a>
                     @else
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>

@@ -4,14 +4,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 col-md-offset-0">
-            <div class="panel panel-default">
+            <div class="panel panel-success">
                 <div class="panel-heading">Tus compras
                 	<a class="btn btn-xs btn-primary" href="{{ route('facompras.create') }}"><i class="glyphicon glyphicon-plus-sign"></i></a>
                 </div>   
                 <div>
                 	<div class="col-md-12">
             			@if($factura_compras->count())
-                		<table class="table table-condensed table-striped">
+                		<table class="table table-hover table-striped">
 		                    <thead>
 		                        <tr>
 		                            <th>ID</th>
