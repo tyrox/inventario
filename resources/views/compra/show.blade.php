@@ -33,12 +33,15 @@
 		                    			<td>{{$detalle_compra->precio_venta}}</td>
 		                    			<td>{{$detalle_compra->cantidad_compra}}</td>
 		                    			<td>{{$detalle_compra->impuesto}}</td>
-		                                <td class="text-right">		                                    
+		                                <td class="text-right">
+		                                	@if ($factura_compra->monto_total > 0)
+		                                    @else	                                    
 		                                    <form action="{{ route('decompras.destroy', $detalle_compra->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
 		                                        <input type="hidden" name="_method" value="DELETE">
 		                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 		                                        <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
 		                                    </form>
+		                                    @endif
 		                                </td>
 		                            </tr>
 		                        @endforeach
@@ -49,6 +52,8 @@
 			                <h3 class="text-center alert alert-info">No ha agregado productos a esta factura!</h3>
 			            @endif
 			            <div class="panel panel-info">
+			            	@if ($factura_compra->monto_total > 0)
+		                    @else
 							<div class="panel-heading">
 							    <h3 class="panel-title">Agregar productos</h3>
 							</div>
@@ -100,10 +105,12 @@
 			                                </button>
 			                            </div>
 			                        </div>
-			                        <a class="btn btn-link" href="{{ route('facompras.edit', $factura_compra->id) }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>
+			                        
 					           	</form>
 					           	
 				           	</div>
+				           	@endif
+				           	<a class="btn btn-link" href="{{ route('facompras.edit', $factura_compra->id) }}"><i class="glyphicon glyphicon-backward"></i>  Back</a>
 			            </div>
         			</div>
                 </div>             

@@ -36,13 +36,17 @@
 		                    			<td>{{$factura_compra->monto_total}}</td>
 		                    			<td>{{$factura_compra->facturacion}}</td>
 		                    			<td>{{$factura_compra->user->name}}</td>
-		                                <td class="text-right">		                                    
+		                                <td class="text-right">		                                	
 		                                    <a class="btn btn-xs btn-warning" href="{{ route('facompras.edit', $factura_compra->id) }}"><i class="glyphicon glyphicon-cog"></i></a>
+		                                    @if ($factura_compra->monto_total > 0)
+		                                    @else
 		                                    <form action="{{ route('facompras.destroy', $factura_compra->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
 		                                        <input type="hidden" name="_method" value="DELETE">
 		                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 		                                        <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+		                                        
 		                                    </form>
+		                                    @endif
 		                                </td>
 		                            </tr>
 		                        @endforeach
